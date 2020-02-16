@@ -1,4 +1,4 @@
-package medium;
+
 // worst case O(n^2), but works in O(n) on average
 class KthSmallestQuickSelect{
 
