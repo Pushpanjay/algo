@@ -1,3 +1,5 @@
+import amzn.BinaryTreeNode;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,39 +10,29 @@ import java.util.Queue;
  * @author pushpanjay.kumar created on 18/2/20
  */
 
-class Node{
-    int data;
-    Node left, right;
-
-    public Node(int data) {
-        this.data = data;
-        this.left = this.right = null;
-    }
-}
-
 public class CreateTreeFromLevelOrderTraversal {
 
 
 
-    private static Node buildTree(String s){
+    private static BinaryTreeNode buildTree(String s){
         if(s.length()==0 || s.charAt(0) == 'N'){
             return null;
         }
         String[] ip = s.split("\\s");
-        Node root = new Node(Integer.parseInt(ip[0]));
+        BinaryTreeNode root = new BinaryTreeNode(Integer.parseInt(ip[0]));
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<BinaryTreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         int i=1;
         while(!queue.isEmpty() && i<ip.length){
-            Node currNode = queue.peek();
+            BinaryTreeNode currNode = queue.peek();
             queue.remove();
 
             String currVal = ip[i];
 
             if(!"N".equals(currVal)){
-                currNode.left = new Node(Integer.parseInt(ip[i]));
+                currNode.left = new BinaryTreeNode(Integer.parseInt(ip[i]));
                 queue.add(currNode.left);
             }
             i++;
@@ -49,7 +41,7 @@ public class CreateTreeFromLevelOrderTraversal {
             }
             currVal = ip[i];
             if(!"N".equals(currVal)){
-                currNode.right = new Node(Integer.parseInt(ip[i]));
+                currNode.right = new BinaryTreeNode(Integer.parseInt(ip[i]));
                 queue.add(currNode.right);
             }
 
@@ -59,7 +51,7 @@ public class CreateTreeFromLevelOrderTraversal {
         return root;
     }
 
-    static void printInorder(Node root){
+    static void printInorder(BinaryTreeNode root){
         if(root==null)
             return;
         printInorder(root.left);
@@ -72,7 +64,7 @@ public class CreateTreeFromLevelOrderTraversal {
         int t = Integer.parseInt(br.readLine());
         while(t-->0){
             String s = br.readLine();
-            Node root = buildTree(s);
+            BinaryTreeNode root = buildTree(s);
             printInorder(root);
         }
     }

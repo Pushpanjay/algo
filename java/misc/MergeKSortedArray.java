@@ -117,18 +117,19 @@ class MergeKSortedArray {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(br.readLine());
+        //int t = Integer.parseInt(br.readLine());
+        int t=1;
         while(t-->0){
-            int k = Integer.parseInt(br.readLine());
-            //int[][] a = {{2, 6, 12, 34}, {1, 9, 20, 1000}, {23, 34, 90, 2000}};
-            int[][] a=new int[k][k];
+            //int k = Integer.parseInt(br.readLine());
+            int[][] a = {{2, 6, 12, 34}, {1, 9, 20, 1000}, {23, 34, 90, 2000}};
+            /*int[][] a=new int[k][k];
             String[] inpar = br.readLine().split("\\s");
             int p=0;
             for(int i=0;i<k;i++){
                 for(int j=0;j<k;j++){
                     a[i][j] = Integer.parseInt(inpar[p++]);
                 }
-            }
+            }*/
             disp(mergeKSortedArray(a, a.length));
         }
     }
