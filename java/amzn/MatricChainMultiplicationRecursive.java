@@ -3,8 +3,9 @@ package amzn;
 /**
  * @author pushpanjay.kumar created on 19/3/20
  */
-public class MatricChainMultiplication {
+public class MatricChainMultiplicationRecursive {
 
+    // tc: O(2^n)
     static int matrixChainOrder(int p[], int i, int j){
         if(i==j)
             return 0;

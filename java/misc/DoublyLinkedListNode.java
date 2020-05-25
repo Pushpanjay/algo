@@ -1,17 +1,17 @@
-package amzn.must_do;
+package misc;
 
 /**
  * @author pushpanjay.kumar created on 24/3/20
  */
 public class DoublyLinkedListNode {
-    private int data;
-    private DoublyLinkedListNode next;
-    private DoublyLinkedListNode prev;
+    public int data;
+    public DoublyLinkedListNode next;
+    public DoublyLinkedListNode prev;
 
-    public DoublyLinkedListNode(int data, DoublyLinkedListNode next, DoublyLinkedListNode prev) {
+    public DoublyLinkedListNode(int data) {
         this.data = data;
-        this.next = next;
-        this.prev = prev;
+        this.next = null;
+        this.prev = null;
     }
 
     public int getData() {

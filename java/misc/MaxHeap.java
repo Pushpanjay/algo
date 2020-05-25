@@ -1,3 +1,5 @@
+package misc;
+
 /**
  * @author pushpanjay.kumar created on 22/3/20
  */
@@ -45,7 +47,7 @@ public class MaxHeap {
         }
     }
 
-    int extractMax(){
+    public int extractMax(){
         if(s==0){
             return Integer.MIN_VALUE;
         }
@@ -63,5 +65,24 @@ public class MaxHeap {
             return Integer.MIN_VALUE;
         }
         return arr[0];
+    }
+
+    void maxHeapifyBubbleUp(int i){
+        int parent = parent(s);
+        if(parent >=0 && arr[parent]<arr[i]){
+            int temp = arr[parent];
+            arr[parent] = arr[i];
+            arr[i] = temp;
+            maxHeapifyBubbleUp(parent);
+        }
+    }
+
+    void insertNode(int data){
+        if (s+1 > c){
+            throw new RuntimeException("Overflow");
+        }
+        s++;
+        arr[s-1] = data;
+        maxHeapifyBubbleUp(s-1);
     }
 }

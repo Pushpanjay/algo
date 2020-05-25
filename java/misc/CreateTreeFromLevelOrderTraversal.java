@@ -1,3 +1,5 @@
+package misc;
+
 import amzn.BinaryTreeNode;
 
 import java.io.BufferedReader;

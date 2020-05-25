@@ -1,4 +1,4 @@
-package amzn.must_do;
+package must_do;
 
 import java.util.Stack;
 

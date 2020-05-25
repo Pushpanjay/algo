@@ -1,4 +1,4 @@
-package chess.pieces;
+package chess;
 
 /**
  * @author pushpanjay.kumar created on 14/3/20

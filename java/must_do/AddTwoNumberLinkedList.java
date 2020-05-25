@@ -1,4 +1,4 @@
-package amzn.must_do;
+package must_do;
 
 import misc.SingleLinkedList;
 import misc.SingleLinkedListNode;
